@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TiketKonserku</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style_newbie.css">
+</head>
+<body>
+
+<div id="toast" class="toast"></div>
+
+<header class="topbar">
+  <a href="#home" class="logo">🎫 TiketKonserku</a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#explore">Explore</a>
+    <a href="tickets.html">Tiket Saya</a>
+  </nav>
+  <button id="loginBtn">Login</button>
+  <span id="profileBox" class="hidden">
+    Halo, <b id="profileName">Rizal</b>
+    <button id="logoutBtn">Keluar</button>
+  </span>
+</header>
+
+<section id="home" class="hero">
+  <h1>Cari Konser Favoritmu</h1>
+  <p>Beli tiket konser, festival, dan acara musik lainnya dengan mudah.</p>
+  <a href="#explore" class="btn-primary">Lihat Event</a>
+</section>
+
+<section id="explore">
+  <h2>Explore Event</h2>
+
+  <div class="filter-box">
+    <input type="text" id="searchInput" placeholder="Cari artis atau kota...">
+    <select id="genreFilter">
+      <option value="all">Semua Genre</option>
+      <option>Pop</option>
+      <option>Indie</option>
+      <option>Hip Hop</option>
+      <option>Rock</option>
+      <option>Jazz</option>
+      <option>Festival</option>
+      <option>Dangdut</option>
+    </select>
+    <select id="cityFilter">
+      <option value="all">Semua Kota</option>
+      <option>Jakarta</option>
+      <option>Surabaya</option>
+      <option>Malang</option>
+      <option>Bandung</option>
+      <option>Balik Papan</option>
+      <option>Banyuwangi</option>
+      <option>Madiun</option>
+      <option>Pontianak</option>
+      <option>Kediri</option>
+      <option>Padang</option>
+      <option>Jayapura</option>
+      <option>Bali</option>
+      <option>Palangkaraya</option>
+    </select>
+  </div>
+
+  <div id="eventGrid" class="event-grid">
+
+    <div class="event-card"
+      data-id="1" data-nama="Hindia Live" data-genre="Pop" data-kota="Jakarta"
+      data-tanggal="2025-11-10" data-gambar="https://tse2.mm.bing.net/th/id/OIP.xREQzspdavZW15mphgSrLAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      data-reguler="450000" data-vip="750000" data-vvip="1200000">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.xREQzspdavZW15mphgSrLAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Hindia" onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>Hindia</h3>
+      <p>Jakarta · 10 Nov 2025</p>
+      <p>Mulai Rp450.000</p>
+      <button onclick="openEvent(1)">Lihat Detail</button>
+    </div>
+
+    <div class="event-card"
+      data-id="2" data-nama="NDX A.K.A" data-genre="Dangdut" data-kota="Surabaya"
+      data-tanggal="2025-12-02" data-gambar="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80"
+      data-reguler="300000" data-vip="550000" data-vvip="900000">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.LTtiDet0Gc8GKYcmiXITBwHaFl?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="NDX A.K.A" onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>NDX A.K.A</h3>
+      <p>Surabaya · 2 Des 2025</p>
+      <p>Mulai Rp300.000</p>
+      <button onclick="openEvent(2)">Lihat Detail</button>
+    </div>
+
+    <div class="event-card"
+      data-id="3" data-nama="Dewa 19" data-genre="Pop" data-kota="Malang"
+      data-tanggal="2025-10-25" data-gambar="https://asset-2.tstatic.net/tribunnews/foto/bank/images/band-dewa-19-manggung-2323232323.jpg"
+      data-reguler="200000" data-vip="400000" data-vvip="700000">
+      <img src="https://asset-2.tstatic.net/tribunnews/foto/bank/images/band-dewa-19-manggung-2323232323.jpg" alt="Rockfest Malang" onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>Dewa 19</h3>
+      <p>Malang · 25 Okt 2025</p>
+      <p>Mulai Rp200.000</p>
+      <button onclick="openEvent(3)">Lihat Detail</button>
+    </div>
+
+    <div class="event-card"
+      data-id="4" data-nama="Air supply" data-genre="Pop" data-kota="Bandung"
+      data-tanggal="2026-01-18" data-gambar="https://www.nme.com/wp-content/uploads/2022/08/air-supply@2000x1270.jpg"
+      data-reguler="3500000" data-vip="6000000" data-vvip="9500000">
+      <img src="https://www.nme.com/wp-content/uploads/2022/08/air-supply@2000x1270.jpg" alt="Air supply" onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>Air supply</h3>
+      <p>Bandung · 18 Jan 2026</p>
+      <p>Mulai Rp3.500.000</p>
+      <button onclick="openEvent(4)">Lihat Detail</button>
+    </div>
+
+    <div class="event-card"
+      data-id="5" data-nama="Coldplay" data-genre="Pop" data-kota="Jakarta"
+      data-tanggal="2025-11-30" data-gambar="https://images.lifestyleasia.com/wp-content/uploads/sites/6/2023/11/14185020/coldplay-kl-hero-1600x900.jpeg"
+      data-reguler="1250000" data-vip="4500000" data-vvip="8000000">
+      <img src="https://images.lifestyleasia.com/wp-content/uploads/sites/6/2023/11/14185020/coldplay-kl-hero-1600x900.jpeg" alt="Coldplay" onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>Coldplay</h3>
+      <p>Jakarta · 30 Nov 2025</p>
+      <p>Mulai Rp1.250.000</p>
+      <button onclick="openEvent(5)">Lihat Detail</button>
+    </div>
+
+    <div class="event-card"
+      data-id="6" data-nama="avenged sevenfold" data-genre="Rock" data-kota="Yogyakarta"
+      data-tanggal="2025-12-20" data-gambar="https://www.digitalmusicnews.com/wp-content/uploads/2023/02/avenged-sevenfold-hacker-canceled-shows-feat.jpg"
+      data-reguler="4000000" data-vip="7000000" data-vvip="11000000">
+      <img src="https://www.digitalmusicnews.com/wp-content/uploads/2023/02/avenged-sevenfold-hacker-canceled-shows-feat.jpg" alt="avenged sevenfold" onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>avenged sevenfold</h3>
+      <p>Yogyakarta · 20 Des 2025</p>
+      <p>Mulai Rp4.000.000</p>
+      <button onclick="openEvent(6)">Lihat Detail</button>
+    </div>
+
+    <div class="event-card"
+      data-id="7" data-nama="westlife " data-genre="Rock" data-kota="Padang"
+      data-tanggal="2025-12-20" data-gambar="https://cdn.antaranews.com/cache/1200x800/2026/02/11/Weslife.jpeg"
+      data-reguler="4000000" data-vip="7000000" data-vvip="11000000">
+      <img src="https://cdn.antaranews.com/cache/1200x800/2026/02/11/Weslife.jpeg" alt="westlife " onerror="this.onerror=null;this.src='https://placehold.co/400x250?text=No+Image';">
+      <h3>westlife </h3>
+      <p>Padang · 20 Des 2026</p>
+      <p>Mulai Rp4.000.000</p>
+      <button onclick="openEvent(7)">Lihat Detail</button>
+    </div>
+
+  </div>
+
+  <p id="emptyState" class="hidden">Event tidak ditemukan.</p>
+</section>
+
+<footer>
+  <p>TiketKonserku - Kelompok3</p>
+</footer>
+
+<div id="eventModal" class="modal hidden">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeModal('eventModal')">X</button>
+    <div id="eventDetail"></div>
+  </div>
+</div>
+
+<div id="checkoutModal" class="modal hidden">
+  <div class="modal-box modal-lebar">
+    <button class="close-btn" onclick="closeModal('checkoutModal')">X</button>
+    <div class="checkout-wrap">
+      <div id="checkoutMain">
+
+      </div>
+      <div id="checkoutSummary">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="loginModal" class="modal hidden">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeModal('loginModal')">X</button>
+    <h2>Login</h2>
+    <p>Akun Palsu</p>
+    <form id="loginForm">
+      <label>Nama</label>
+      <input id="loginName" value="Rizal" required>
+
+      <label>Email</label>
+      <input id="loginEmail" type="email" value="rizal@example.com" required>
+
+      <label>Password</label>
+      <input id="loginPassword" type="password" value="12345678" required>
+
+      <button type="submit">Masuk</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
